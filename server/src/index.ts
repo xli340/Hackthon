@@ -4,14 +4,14 @@ import typeDefs from "./schemas";
 import resolvers from "./resolvers";
 import session from "express-session";
 import Redis from "ioredis";
-import connectRdis from "connect-redis";
+import connectRedis from "connect-redis";
 
 // Initialize the Express application
 const app = express();
 app.set("trust proxy", 1);
 
 // set redis
-const RedisStore = connectRdis(session);
+const RedisStore = connectRedis(session);
 const redis = new Redis();
 
 // Set up session middleware
