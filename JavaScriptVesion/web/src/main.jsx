@@ -9,7 +9,7 @@ const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
   credentials:"include",
-  headers: undefined
+  headers: { "X-Forwarded-Proto": "https" },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
