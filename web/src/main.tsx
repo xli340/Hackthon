@@ -8,7 +8,7 @@ const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
   credentials:"include",
-  headers: undefined
+  headers: { "X-Forwarded-Proto": "https" },
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -17,6 +17,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
-    </ChakraProvider>
+    </ChakraProvider> 
   </React.StrictMode>
 );
